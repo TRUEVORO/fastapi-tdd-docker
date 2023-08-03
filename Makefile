@@ -18,6 +18,9 @@ style:
 	docker-compose exec web isort .
 	docker-compose exec web flake8 .
 
+unittests:
+	docker-compose exec web pytest -k "unit" -n auto -p no:cacheprovider
+
 tests:
 	docker-compose exec web python -m pytest -p no:cacheprovider
 
